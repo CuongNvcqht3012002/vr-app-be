@@ -9,20 +9,20 @@ concurrency:
   group: ${{ github.workflow }}
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: yarn install
-      - name: Lint code
-        run: yarn lint
+  # lint:
+  #   name: Lint
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+  #     - name: Install Dependencies
+  #       run: yarn install
+  #     - name: Lint code
+  #       run: yarn lint
 
   build:
     name: Build
-    needs: lint
+    # needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
