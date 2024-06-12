@@ -2,7 +2,7 @@
 # BUILD FOR LOCAL DEVELOPMENT
 ###################
 
-FROM node:18.18.2-alpine As development
+FROM node:18-alpine As development
 WORKDIR /usr/src/app
 COPY package.json yarn.lock startup.sh .env.production ./
 RUN yarn install --frozen-lockfile
@@ -12,7 +12,7 @@ COPY . .
 # BUILD FOR PRODUCTION
 ###################
 
-FROM node:18.18.2-alpine As build
+FROM node:18-alpine As build
 WORKDIR /usr/src/app
 COPY package.json yarn.lock startup.sh .env.production ./
 COPY --from=development /usr/src/app/node_modules ./node_modules
@@ -27,7 +27,7 @@ RUN yarn global add @nestjs/cli typescript ts-node env-cmd
 # PRODUCTION
 ###################
 
-FROM node:18.18.2-alpine As production
+FROM node:18-alpine As production
 WORKDIR /app
 # Copy the bundled code from the build stage to the production image
 COPY --from=build /usr/src/app/node_modules ./node_modules
