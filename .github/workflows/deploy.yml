@@ -20,21 +20,21 @@ jobs:
   #     - name: Lint code
   #       run: yarn lint
 
-  build:
-    name: Build
-    # needs: lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build
+  # build:
+  #   name: Build
+  #   # needs: lint
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+  #     - name: Install Dependencies
+  #       run: yarn install
+  #     - name: Build
+  #       run: yarn build
 
   deploy:
     name: Deploy
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
