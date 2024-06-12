@@ -19,7 +19,6 @@ export class User extends CoreEntity {
 
   @OneToMany(() => Result, (results) => results.user, {
     cascade: true,
-    eager: true,
   })
   results: Result[]
 }

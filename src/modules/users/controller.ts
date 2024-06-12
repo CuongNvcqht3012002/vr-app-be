@@ -26,4 +26,10 @@ export class UsersController {
   findOne(@Param('id') id: number) {
     return this.service.findOne({ id }, false, ['results'])
   }
+
+  @ApiOperation({ summary: 'Get list users' })
+  @Get()
+  findAll() {
+    return this.service.findAll()
+  }
 }

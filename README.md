@@ -1,7 +1,3 @@
-## Setup
-
-You need to change some variables at .env.development, .env.production, docker-compose.yml, copy_production_db_to_local.sh, cron_send_backup_db.sh
-
 ## Installation
 
 ```bash
@@ -34,3 +30,7 @@ $ yarn dev => http://localhost:3004
 $ http://localhost:3004/swagger
 
 ```
+
+## VPS Information
+ssh root@14.225.206.182
+RFEDS7EYYvCRpVV3JmP5
