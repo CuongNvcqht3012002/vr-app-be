@@ -12,11 +12,14 @@ export class Result extends CoreEntity {
   @Column({ type: 'timestamp' })
   endTime: Date
 
-  @Column({ type: 'enum', enum: SCENE_ENUM, nullable: false })
+  @Column({ type: 'enum', enum: SCENE_ENUM, nullable: true })
   scene: SCENE_ENUM
 
   @ManyToOne(() => User, (user) => user.results)
   user: User
+
+  @Column()
+  userId: number
 
   @Column({ type: 'enum', enum: RESULT_ENUM, nullable: true })
   result: RESULT_ENUM

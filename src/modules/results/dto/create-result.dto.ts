@@ -13,6 +13,7 @@ export class CreateResultDto {
   endTime: Date
 
   @ApiProperty({ type: 'enum', enum: SCENE_ENUM })
+  @IsNotEmpty()
   scene: SCENE_ENUM
 
   @ApiProperty()
