@@ -6,7 +6,7 @@ import { Column, Entity, ManyToOne } from 'typeorm'
 
 @Entity()
 export class Result extends CoreEntity {
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'float' })
   elapsedTime: number
 
   @Column({ type: 'enum', enum: LEVEL_ENUM, nullable: true })
