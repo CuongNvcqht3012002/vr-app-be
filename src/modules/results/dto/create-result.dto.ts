@@ -1,20 +1,16 @@
 import { RESULT_ENUM } from '@/modules/results/enums/result.enum'
-import { SCENE_ENUM } from '@/modules/results/enums/scene.enum'
+import { LEVEL_ENUM } from '@/modules/results/enums/level.enum'
 import { ApiProperty } from '@nestjs/swagger'
 import { IsNotEmpty, IsNumber } from 'class-validator'
 
 export class CreateResultDto {
   @ApiProperty()
   @IsNotEmpty()
-  startTime: Date
+  elapsedTime: number
 
-  @ApiProperty()
+  @ApiProperty({ type: 'enum', enum: LEVEL_ENUM })
   @IsNotEmpty()
-  endTime: Date
-
-  @ApiProperty({ type: 'enum', enum: SCENE_ENUM })
-  @IsNotEmpty()
-  scene: SCENE_ENUM
+  level: LEVEL_ENUM
 
   @ApiProperty()
   @IsNumber()
